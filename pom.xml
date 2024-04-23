@@ -210,6 +210,9 @@
 					<logViolationsToConsole>true</logViolationsToConsole>
 					<failOnViolation>true</failOnViolation>
 					<includeTestSourceDirectory>true</includeTestSourceDirectory>
+					<configLocation>${basedir}/checkstyle.xml</configLocation>
+					<propertyExpansion>checkstyle.config.path=${basedir}</propertyExpansion>
+					<enableRSS>false</enableRSS>
 				</configuration>
 			</plugin>
 			
