@@ -41,14 +41,29 @@ public class BaseClass {
 	@BeforeClass(alwaysRun = true)
 	public void setup() {
 		
-//		service=new AppiumServiceBuilder().withAppiumJS(new File ("/Users/opt/homebrew/lib/node_modules/appium/build/lib/main.js"))
-//		.usingDriverExecutable(new File ("/opt/homebrew/bin/node"))
-//		.withIPAddress("127.0.0.1")
-//		.usingPort(4723)
-//		.withArgument(GeneralServerFlag.LOCAL_TIMEZONE)
-//		.build();
-//		
-//		service.start();
+//		String appiumServerPath = "/opt/homebrew/bin/appium";
+//		int port=4723;
+//		System.setProperty("node.executable", "/opt/homebrew/bin/node");
+//
+//        // Create an AppiumServiceBuilder instance
+//
+//        AppiumServiceBuilder builder = new AppiumServiceBuilder()
+//
+//                .withAppiumJS(new File(appiumServerPath))
+//                .usingPort(port);
+//
+//        // Start the Appium server
+//
+//        AppiumDriverLocalService service = AppiumDriverLocalService.buildService(builder);
+//
+//        service.start();
+//
+//        // Get the URL of the started Appium server
+//
+//        String appiumServerUrl = service.getUrl().toString();
+//
+//        System.out.println("Appium server started at: " + appiumServerUrl);
+
 		
 		UiAutomator2Options options=new UiAutomator2Options();
 		

@@ -1,19 +1,30 @@
 package Flexiloans;
 
 
-import java.util.List;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import java.time.Duration;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.interactions.Pause;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import PageObject.AppDashboard;
 import PageObject.AppForm2;
 import PageObject.AppFormStep_1;
 import PageObject.AppFormStep_2;
+import PageObject.AppFormStep_3;
 import PageObject.AppLandingPage;
 import PageObject.AppLoanAmount;
 import core.BaseClass;
 import core.ListenrClass;
+import io.appium.java_client.TouchAction;
+
 
 
 @Listeners(ListenrClass.class)
@@ -34,7 +45,7 @@ public class PositiveFlow extends BaseClass{
 
 	
 	
-	@Test (priority = 0)
+	@Test(priority = 0)
 	public void landingPage()
 	{
 	//	reportUtil.intialLogForTest(TCID);
@@ -121,6 +132,7 @@ public class PositiveFlow extends BaseClass{
 		}
 		
 		
+		@SuppressWarnings("deprecation")
 		@Test (priority=4)
 		public void FormStep_1() throws InterruptedException
 		{
@@ -129,40 +141,48 @@ public class PositiveFlow extends BaseClass{
 			
 			formStep1.SelectGenderMale();
 			
-			formStep1.SelectDOBField1("20/03/1997");
+			formStep1.SelectDOBField();
 			
-//			formStep1.SelectDOBField();
+			int startX = (int) (formStep1.dobYearPicker.getLocation().getX() + formStep1.dobYearPicker.getSize().getWidth()/2);
 			
-			List<WebElement> listOfElements = driver.findElements(By.xpath("//android.view.View[@resource-id=\"com.flexiloan:id/picker_day\"]"));
-						
-			System.out.println("list= "+listOfElements);
+			int startY = (int) (formStep1.dobYearPicker.getLocation().getY() + formStep1.dobYearPicker.getSize().getHeight()*0.60);
 			
-//			--------------------------------------------------------
+			String desiredValue = "1996"; // Change this to your desired value
 			
-//			WebElement DOB_Element = driver.findElement(By.xpath("//android.view.View[@resource-id=\"com.flexiloan:id/picker_day\"]"));
-//			
-//			int startX = DOB_Element.getLocation().getX() + DOB_Element.getSize().getWidth() / 3;
-//
-//			int startY = DOB_Element.getLocation().getY() + DOB_Element.getSize().getHeight() / 2;
-//
-//			int endY = startY - 200; // Adjust the distance to scroll as needed
-//			
-//			Actions actions=new Actions(driver);
-//			
-//			actions.moveToElement(DOB_Element, startX, endY).clickAndHold().moveByOffset(0, -endY).release().perform();
-//			
+			int maxInterations=05;
 
-//			PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
-//		    Sequence sequence = new Sequence(finger1, 1)
-//		        .addAction(finger1.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY))
-//		        .addAction(finger1.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
-//		        .addAction(new Pause(finger1, Duration.ofMillis(200)))
-//		        .addAction(finger1.createPointerMove(Duration.ofMillis(100), PointerInput.Origin.viewport(), endX, endY))
-//		        .addAction(finger1.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
-//		    
-//		    driver.perform(Collections.singletonList(sequence));
+			int iterationCount=0;
 			
+			while (iterationCount < maxInterations)
+			{
 			
+			int endX = startX; // Adjust the distance to scroll as needed
+
+			int endY = startY + 300; // Adjust the distance to scroll as needed
+		
+			PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
+		    Sequence sequence = new Sequence(finger1, 1)
+		        .addAction(finger1.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY))
+		        .addAction(finger1.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+		        .addAction(new Pause(finger1, Duration.ofMillis(200)))
+		        .addAction(finger1.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), endX, endY))
+		        .addAction(finger1.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+		    
+		    driver.perform(Collections.singletonList(sequence));
+		    
+		    iterationCount ++;
+		    
+		    if (driver.getPageSource().contains(desiredValue))
+		    	{
+		    		break;
+		    	}
+		    
+			}
+			
+			Thread.sleep(5000);
+			
+			formStep1.SelectDOB();
+						
 			formStep1.SelectBusinessAge2to5Years();
 			
 			formStep1.SelectCurrentAccountYes();
@@ -179,9 +199,9 @@ public class PositiveFlow extends BaseClass{
 		{
 			AppFormStep_2 formStep2=new AppFormStep_2(driver);
 			
-			formStep2.EnterBusinessPincode(randome6no);
+			formStep2.EnterBusinessPincode("400016");
 			
-			formStep2.EnterResidentialPincode(randome6no);
+			formStep2.EnterResidentialPincode("411062");
 			
 			formStep2.SelectResidentialOwnershipOwned();
 			
@@ -194,6 +214,70 @@ public class PositiveFlow extends BaseClass{
 			formStep2.ClickFormStep2NextBtn();
 		}
 		
-		
+		@Test(priority = 6)
+		public void FormStep_3()
+		{
+			AppFormStep_3 formStep3=new AppFormStep_3(driver);
+			
+			formStep3.SelectNatureBusinessRetailer();
+			
+			formStep3.SelectProductListField();
+			
+			formStep3.SelectProductListSearchField("Dairy");
+			
+			formStep3.SelectMarkCheckboxForSearchedProduct();
+			
+			formStep3.SubmitSelectedProduct();
+			
+			formStep3.EnterBusinessName(name);
+			
+			formStep3.EnterBusinessAddressLineOne(ranom5charcters);
+			
+			formStep3.EnterBusinessAddressLineTwo(ranom5charcters);
+
+			Dimension size = driver.manage().window().getSize();
+
+			int startX = size.width / 2;
+
+			int startY = size.height / 2;
+			
+			int maxInterations=1;
+
+			int iterationCount=0;
+			
+			while (iterationCount < maxInterations)
+			{
+			int endY = size.height / 4; 
+
+			PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
+		    Sequence sequence = new Sequence(finger1, 1)
+		        .addAction(finger1.createPointerMove(Duration.ZERO, PointerInput.Origin.viewport(), startX, startY))
+		        .addAction(finger1.createPointerDown(PointerInput.MouseButton.LEFT.asArg()))
+		        .addAction(new Pause(finger1, Duration.ofMillis(200)))
+		        .addAction(finger1.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), startX, endY))
+		        .addAction(finger1.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+		    
+		    driver.perform(Collections.singletonList(sequence));
+		    
+			}
+		    
+//			formStep3.EnterBusinessAddressPincode(randome6no);
+//			
+//			formStep3.EnterBusinessAddressCity("Mumbai");
+//			
+//			formStep3.EnterBusinessAddressState("Maharashtra");
+			
+			formStep3.EnterResidentialAddressLineOne(ranom5charcters);
+			
+			formStep3.EnterResidentialAddressLineTwo(ranom5charcters);
+			
+//			formStep3.EnterResidentialAddressPincode(randome6no);
+//			
+//			formStep3.EnterResidentialAddressCity("Mumbai");
+//			
+//			formStep3.EnterResidentialAddressState("Maharashtra");
+			
+			formStep3.ClickFormStep3NextBtn();
+		}
 	
 }

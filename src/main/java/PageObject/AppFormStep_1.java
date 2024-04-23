@@ -48,7 +48,7 @@ public class AppFormStep_1 {
 	
 	@AndroidFindBy(xpath="//android.view.View[@resource-id=\"com.flexiloan:id/picker_year\"]")
 	@CacheLookup
-	WebElement dobYearPicker;
+	public WebElement dobYearPicker;
 	
 	@AndroidFindBy(xpath="//android.widget.EditText[@resource-id=\"com.flexiloan:id/et_sales\"]")
 	@CacheLookup
