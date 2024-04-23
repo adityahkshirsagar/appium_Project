@@ -190,33 +190,31 @@
 			</plugin>
 
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>3.3.1</version>
-				<executions>
-					<execution>
-						<phase>verify</phase>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<configLocation>${checkstyle.config}</configLocation>
-					<suppressionsLocation>${checkstyle.suppress}</suppressionsLocation>
-					<inputEncoding>UTF-8</inputEncoding>
-					<outputEncoding>UTF-8</outputEncoding>
-					<consoleOutput>true</consoleOutput>
-					<logViolationsToConsole>true</logViolationsToConsole>
-					<failOnViolation>true</failOnViolation>
-					<includeTestSourceDirectory>true</includeTestSourceDirectory>
-					<configLocation>${basedir}/checkstyle.xml</configLocation>
-					<propertyExpansion>checkstyle.config.path=${basedir}</propertyExpansion>
-					<enableRSS>false</enableRSS>
-				</configuration>
-			</plugin>
+                		<groupId>org.apache.maven.plugins</groupId>
+                		<artifactId>maven-checkstyle-plugin</artifactId>
+                		<version>3.0.0</version>
+                		<executions>
+                    		<execution>
+                        		<phase>verify</phase>
+                        		<goals>
+                            			<goal>check</goal>
+                        		</goals>
+                    		</execution>
+                		</executions>
+                		<configuration>
+                    			<consoleOutput>true</consoleOutput>
+                    			<enableRSS>false</enableRSS>
+                    			<configLocation>${basedir}/checkstyle.xml</configLocation>
+                    			<propertyExpansion>checkstyle.config.path=${basedir}</propertyExpansion>
+                		</configuration>
+                	<dependencies>
+                    		<dependency>
+                       			<groupId>com.puppycrawl.tools</groupId>
+                       			<artifactId>checkstyle</artifactId>
+                       			<version>[8.18,)</version>
+                  		</dependency>
+                	</dependencies>
+            		</plugin>
 		</plugins>
 	</build>
-
-
 </project>
