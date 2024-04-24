@@ -257,7 +257,9 @@ public class PositiveFlow extends BaseClass{
 		        .addAction(finger1.createPointerMove(Duration.ofMillis(300), PointerInput.Origin.viewport(), startX, endY))
 		        .addAction(finger1.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
 		    
-		    driver.perform(Collections.singletonList(sequence));
+		    	driver.perform(Collections.singletonList(sequence));
+
+			iterationCount ++;
 		    
 			}
 		    
