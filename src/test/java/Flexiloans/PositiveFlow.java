@@ -179,7 +179,7 @@ public class PositiveFlow extends BaseClass{
 		    
 			}
 			
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			
 			formStep1.SelectDOB();
 						
@@ -215,7 +215,7 @@ public class PositiveFlow extends BaseClass{
 		}
 		
 		@Test(priority = 6)
-		public void FormStep_3()
+		public void FormStep_3() throws InterruptedException
 		{
 			AppFormStep_3 formStep3=new AppFormStep_3(driver);
 			
@@ -259,23 +259,17 @@ public class PositiveFlow extends BaseClass{
 		    
 		    driver.perform(Collections.singletonList(sequence));
 		    
-			}
+		    iterationCount ++;
 		    
-//			formStep3.EnterBusinessAddressPincode(randome6no);
-//			
-//			formStep3.EnterBusinessAddressCity("Mumbai");
-//			
-//			formStep3.EnterBusinessAddressState("Maharashtra");
+			}
+		   	
+			System.out.println("Scrolled successfully");
 			
-			formStep3.EnterResidentialAddressLineOne(ranom5charcters);
+			Thread.sleep(3000);
 			
-			formStep3.EnterResidentialAddressLineTwo(ranom5charcters);
+			formStep3.EnterResidentialAddressLineOne("Test Address");
 			
-//			formStep3.EnterResidentialAddressPincode(randome6no);
-//			
-//			formStep3.EnterResidentialAddressCity("Mumbai");
-//			
-//			formStep3.EnterResidentialAddressState("Maharashtra");
+			formStep3.EnterResidentialAddressLineTwo("Test Street");
 			
 			formStep3.ClickFormStep3NextBtn();
 		}
