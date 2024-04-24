@@ -2,14 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="MobileAppFlow">
-    <listeners>
-		<listener class-name="core.ReportUtility"></listener>
-	</listeners>
-
-	<test name="FlexiloansMultiFlows ">
-		<parameter name="browser" value="chrome" />
+<test name="FlexiloansMobbileFlows">
 		<classes>
-			<class name="com.FlexiloanFlows.testCases.TestingClass"/>
+			<class name="Flexiloans.PositiveFlow.java"/>
 		</classes>
 	</test>
 </suite>
