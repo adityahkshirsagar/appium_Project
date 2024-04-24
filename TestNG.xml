@@ -4,7 +4,7 @@
 <suite name="MobileAppFlow">
 <test name="FlexiloansMobbileFlows">
 		<classes>
-			<class name="Flexiloans.PositiveFlow.java"/>
+			<class name="Flexiloans.PositiveFlow"/>
 		</classes>
 	</test>
 </suite>
