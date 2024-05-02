@@ -13,6 +13,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -29,7 +30,7 @@ import io.appium.java_client.service.local.flags.GeneralServerFlag;
 public class BaseClass {
 	
 //	public Databaseutil databaseutil=new Databaseutil();
-//	public ReportUtility reportUtil=new ReportUtility();
+	public ReportUtility reportUtil=new ReportUtility();
 	public ExcelUtil excelUtil=new ExcelUtil();
 	public static AppiumDriver driver;
 	public AppiumDriverLocalService service;
@@ -90,7 +91,7 @@ public class BaseClass {
 		} catch (MalformedURLException e) {
 	        e.printStackTrace();
 	      }		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		ThreadLocalClass.setexcelUtil(excelUtil);
 		excelUtil.openExcelFile(FilePaths.APPIUM_DDT_EXCEL);
 	}
@@ -100,23 +101,7 @@ public class BaseClass {
 	public void checkingToken(Method mtd) throws Exception {
 		 TCID=mtd.getDeclaringClass().getSimpleName()+"_"+mtd.getName();
 		//System.out.println(ThreadLocalclass.gettoken());
-		 }
-	
-	public String captureScreen(String picname) throws IOException {
-		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-
-//		String target = ("/Users/fllap0470/eclipse-workspace/Appium_Test/Screenshots/" + picname + ".png");
-		String target = (FilePaths.SCREENSHOTS + picname + ".png");
-
-		File destination = new File(target);
-
-		FileUtils.copyFile(source, destination);
-
-		System.out.println("Screenshot Taken");
-
-		return target;
-	}
-	
+		 }	
 		
 //	@AfterClass
 //	  public void tearDown() {

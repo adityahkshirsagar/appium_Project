@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">7 methods,   7 passed</span>
+                    <span class="method-stats">10 methods, 1 failed,   9 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Flexiloans.PositiveFlow" class="method navigator-link" hash-for-method="DocumentUpload">DocumentUpload</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,7 +118,17 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Flexiloans.PositiveFlow" class="method navigator-link" hash-for-method="BankStatementUpload">BankStatementUpload</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="Flexiloans.PositiveFlow" class="method navigator-link" hash-for-method="Dashboard">Dashboard</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Flexiloans.PositiveFlow" class="method navigator-link" hash-for-method="Form2">Form2</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -124,17 +148,17 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="Flexiloans.PositiveFlow" class="method navigator-link" hash-for-method="LandingPage">LandingPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="Flexiloans.PositiveFlow" class="method navigator-link" hash-for-method="LoanAmountScreen">LoanAmountScreen</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Flexiloans.PositiveFlow" class="method navigator-link" hash-for-method="form2">form2</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Flexiloans.PositiveFlow" class="method navigator-link" hash-for-method="landingPage">landingPage</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Flexiloans.PositiveFlow" class="method navigator-link" hash-for-method="OfferScreen">OfferScreen</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -149,6 +173,89 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">Flexiloans.PositiveFlow</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="DocumentUpload">
+                  </a> <!-- DocumentUpload -->
+                  <span class="method-name">DocumentUpload</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: The element &apos;By.xpath: //android.widget.Button[@resource-id=&quot;com.flexiloan:id/captureBtn&quot;]&apos; does not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;14.3.1&apos;, java.version: &apos;17.0.4.1&apos;
+Driver info: io.appium.java_client.AppiumDriver
+Command: [84b7cefd-35d8-47c7-bb0f-5cd541472e78, isElementDisplayed {id=00000000-0000-035d-ffff-ffff000007fe}]
+Capabilities {appium:appActivity: com.flexiloan.Activity.Regi..., appium:appPackage: com.flexiloan, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.flexiloan.Activity.Regi..., appPackage: com.flexiloan, automationName: UiAutomator2, deviceName: Galaxy M21, ensureWebviewsHavePages: true, nativeWebScreenshot: true, platformName: ANDROID, platformVersion: 12, udid: RZ8NA0YN0FT}, appium:deviceApiLevel: 31, appium:deviceManufacturer: samsung, appium:deviceModel: SM-M215F, appium:deviceName: RZ8NA0YN0FT, appium:deviceScreenDensity: 450, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: RZ8NA0YN0FT, appium:ensureWebviewsHavePages: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:nativeWebScreenshot: true, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.8125, appium:platformVersion: 12, appium:statBarHeight: 78, appium:takesScreenshot: true, appium:udid: RZ8NA0YN0FT, appium:viewportRect: {height: 2262, left: 0, top: 78, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AppiumDriver:  on ANDROID (84b7cefd-35d8-47c7-bb0f-5cd541472e78)] -&gt; xpath: //android.widget.Button[@resource-id=&quot;com.flexiloan:id/captureBtn&quot;]]
+Session ID: 84b7cefd-35d8-47c7-bb0f-5cd541472e78
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:283)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:42)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.call(InterceptorOfASingleElement.java:65)
+	at io.appium.java_client.proxy.Interceptor.intercept(Interceptor.java:78)
+	at org.openqa.selenium.remote.RemoteWebElement$ByteBuddy$ZWjfeYUu.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	at Flexiloans.PositiveFlow.DocumentUpload(PositiveFlow.java:433)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -157,9 +264,23 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+                  <a name="BankStatementUpload">
+                  </a> <!-- BankStatementUpload -->
+                  <span class="method-name">BankStatementUpload</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="Dashboard">
                   </a> <!-- Dashboard -->
                   <span class="method-name">Dashboard</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Form2">
+                  </a> <!-- Form2 -->
+                  <span class="method-name">Form2</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -185,6 +306,13 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="LandingPage">
+                  </a> <!-- LandingPage -->
+                  <span class="method-name">LandingPage</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="LoanAmountScreen">
                   </a> <!-- LoanAmountScreen -->
                   <span class="method-name">LoanAmountScreen</span>
@@ -192,16 +320,9 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="form2">
-                  </a> <!-- form2 -->
-                  <span class="method-name">form2</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="landingPage">
-                  </a> <!-- landingPage -->
-                  <span class="method-name">landingPage</span>
+                  <a name="OfferScreen">
+                  </a> <!-- OfferScreen -->
+                  <span class="method-name">OfferScreen</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -209,7 +330,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/t7/txy29z8j385bgrgcwzsw5nn80000gn/T/testng-eclipse--2116536184/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/t7/txy29z8j385bgrgcwzsw5nn80000gn/T/testng-eclipse-1209330513/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -258,40 +379,52 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(7);
+data.addRows(10);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'FormStep_3')
+data.setCell(0, 1, 'DocumentUpload')
 data.setCell(0, 2, 'Flexiloans.PositiveFlow')
-data.setCell(0, 3, 25499);
+data.setCell(0, 3, 47755);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'form2')
+data.setCell(1, 1, 'BankStatementUpload')
 data.setCell(1, 2, 'Flexiloans.PositiveFlow')
-data.setCell(1, 3, 22525);
+data.setCell(1, 3, 46624);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'FormStep_1')
+data.setCell(2, 1, 'FormStep_3')
 data.setCell(2, 2, 'Flexiloans.PositiveFlow')
-data.setCell(2, 3, 19980);
+data.setCell(2, 3, 24112);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'Dashboard')
+data.setCell(3, 1, 'Form2')
 data.setCell(3, 2, 'Flexiloans.PositiveFlow')
-data.setCell(3, 3, 13925);
+data.setCell(3, 3, 22275);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'FormStep_2')
+data.setCell(4, 1, 'FormStep_1')
 data.setCell(4, 2, 'Flexiloans.PositiveFlow')
-data.setCell(4, 3, 13403);
+data.setCell(4, 3, 20066);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'landingPage')
+data.setCell(5, 1, 'Dashboard')
 data.setCell(5, 2, 'Flexiloans.PositiveFlow')
-data.setCell(5, 3, 7343);
+data.setCell(5, 3, 19640);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'LoanAmountScreen')
+data.setCell(6, 1, 'FormStep_2')
 data.setCell(6, 2, 'Flexiloans.PositiveFlow')
-data.setCell(6, 3, 4278);
+data.setCell(6, 3, 12347);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'OfferScreen')
+data.setCell(7, 2, 'Flexiloans.PositiveFlow')
+data.setCell(7, 3, 10616);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'LandingPage')
+data.setCell(8, 2, 'Flexiloans.PositiveFlow')
+data.setCell(8, 3, 8896);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'LoanAmountScreen')
+data.setCell(9, 2, 'Flexiloans.PositiveFlow')
+data.setCell(9, 3, 5372);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -323,60 +456,86 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.landingPage())</span>
-                <span class="method-start">16681 ms</span>
+                <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.LandingPage())</span>
+                <span class="method-start">18652 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">landingPage</span>
-                <span class="method-start">16685 ms</span>
+                <span class="method-name">LandingPage</span>
+                <span class="method-start">18667 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
-                <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.form2())</span>
-                <span class="method-start">24499 ms</span>
+                <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.Form2())</span>
+                <span class="method-start">28304 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">form2</span>
-                <span class="method-start">24499 ms</span>
+                <span class="method-name">Form2</span>
+                <span class="method-start">28306 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.Dashboard() throws java.lang.InterruptedException)</span>
-                <span class="method-start">47163 ms</span>
+                <span class="method-start">50716 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">Dashboard</span>
-                <span class="method-start">47164 ms</span>
+                <span class="method-start">50718 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.LoanAmountScreen())</span>
-                <span class="method-start">61178 ms</span>
+                <span class="method-start">70441 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">LoanAmountScreen</span>
-                <span class="method-start">61179 ms</span>
+                <span class="method-start">70442 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">FormStep_1</span>
+                <span class="method-start">75882 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.FormStep_1() throws java.lang.InterruptedException)</span>
-                <span class="method-start">65504 ms</span>
+                <span class="method-start">75882 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">FormStep_1</span>
-                <span class="method-start">65505 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.FormStep_2())</span>
-                <span class="method-start">85541 ms</span>
+                <span class="method-start">96055 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">FormStep_2</span>
-                <span class="method-start">85543 ms</span>
+                <span class="method-start">96057 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.FormStep_3() throws java.lang.InterruptedException)</span>
-                <span class="method-start">99026 ms</span>
+                <span class="method-start">108477 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">FormStep_3</span>
-                <span class="method-start">99027 ms</span>
+                <span class="method-start">108478 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.OfferScreen() throws java.lang.InterruptedException)</span>
+                <span class="method-start">132700 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">OfferScreen</span>
+                <span class="method-start">132703 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.BankStatementUpload() throws java.lang.InterruptedException)</span>
+                <span class="method-start">143380 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">BankStatementUpload</span>
+                <span class="method-start">143380 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">checkingToken(public void Flexiloans.PositiveFlow.DocumentUpload())</span>
+                <span class="method-start">190074 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">DocumentUpload</span>
+                <span class="method-start">190077 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

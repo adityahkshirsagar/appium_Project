@@ -33,7 +33,7 @@ public class ThreadLocalClass {
 
 	}
 	
-	public static ExtentTest   getclasslevel()
+	public static ExtentTest getclasslevel()
 	{
 		return classlevel.get();
 	}

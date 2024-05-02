@@ -17,7 +17,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 /**
- * @author:TYSS
+ * @author:Aditya
  * @description: This method is used to generate extent report.
  */
 public class ListenrClass implements ITestListener, IClassListener
@@ -105,8 +105,8 @@ public class ListenrClass implements ITestListener, IClassListener
 	          String data = d1.format(d);*/
 
 		// ExtentSparkReporter spark = new ExtentSparkReporter("./ExtendRepots/"+data+"report.html");
-		spark.config().setDocumentTitle("FexliLoan Api Execution Report");
-		spark.config().setReportName("Test Case Exection Report");
+		spark.config().setDocumentTitle("FexliLoan appium framework Execution Report");
+		spark.config().setReportName("Test Case Execution Report");
 		spark.config().setTheme(Theme.DARK);
 
 

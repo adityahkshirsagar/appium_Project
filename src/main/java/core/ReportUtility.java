@@ -10,6 +10,8 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import core.BaseClass;
+import io.appium.java_client.AppiumDriver;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -18,12 +20,13 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-	public class ReportUtility extends BaseClass implements ITestListener {
+	public class ReportUtility {
 		
 		public ExtentSparkReporter htmlReporter;
     	public ExtentReports extent;
     	public ExtentTest logger;
-
+    	ScreenCapture sc=new ScreenCapture();
+    	
 	    public ExtentTest intialLogForTest(String testCaseName)
 	    {
 	        ExcelUtil excelUtil = ThreadLocalClass.getexcelUtil();
@@ -95,7 +98,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 	    		
 	    		try 
 	    		{
-	    			captureScreen(tr.getName());
+	    			sc.captureScreen(tr.getName());
 	    		} 
 	    		
 	    		catch (IOException e) 

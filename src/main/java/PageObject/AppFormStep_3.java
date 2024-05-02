@@ -20,7 +20,7 @@ public class AppFormStep_3 {
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@resource-id=\"com.flexiloan:id/tagTextView\" and @text=\"Retailer\"]")
 	@CacheLookup
-	WebElement natureOfBusinessRetailer;
+	public WebElement natureOfBusinessRetailer;
 	
 	@AndroidFindBy(xpath="//android.widget.TextView[@resource-id=\"com.flexiloan:id/tagTextView\" and @text=\"Wholesaler\"]")
 	@CacheLookup

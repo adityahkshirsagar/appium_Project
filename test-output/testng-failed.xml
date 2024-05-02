@@ -5,8 +5,8 @@
     <classes>
       <class name="Flexiloans.PositiveFlow">
         <methods>
+          <include name="DocumentUpload"/>
           <include name="checkingToken"/>
-          <include name="FormStep_3"/>
           <include name="setup"/>
         </methods>
       </class> <!-- Flexiloans.PositiveFlow -->
