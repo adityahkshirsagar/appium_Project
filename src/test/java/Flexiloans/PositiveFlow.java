@@ -189,9 +189,9 @@ public class PositiveFlow extends BaseClass{
 			
 			Thread.sleep(2000);
 			
-			formStep1.EditMonthlySales("300000");
-			
 			formStep1.SelectDOB();
+
+			formStep1.EditMonthlySales("300000");
 						
 			formStep1.SelectBusinessAge2to5Years();
 			
